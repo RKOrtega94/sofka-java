@@ -44,7 +44,7 @@ CREATE DATABASE account_database
     CONNECTION LIMIT = -1
     IS_TEMPLATE = False;
 
-CREATE TABLE public.account
+CREATE TABLE public.accounts
 (
     id bigserial NOT NULL,
     "number" character varying(50) NOT NULL,
