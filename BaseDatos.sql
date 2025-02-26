@@ -49,7 +49,7 @@ CREATE TABLE public.accounts
     id bigserial NOT NULL,
     "number" character varying(50) NOT NULL,
     type character varying(10) NOT NULL DEFAULT 'SAVINGS',
-    initial_balance numeric(15, 6) NOT NULL DEFAULT 0,
+    balance numeric(15, 6) NOT NULL DEFAULT 0,
     status boolean NOT NULL DEFAULT true,
     PRIMARY KEY (id)
 );
@@ -64,7 +64,7 @@ CREATE TABLE public.movements
     balance numeric(15, 6) NOT NULL DEFAULT 0,
     PRIMARY KEY (id),
     FOREIGN KEY (account_id)
-        REFERENCES public.account (id) MATCH SIMPLE
+        REFERENCES public.accounts (id) MATCH SIMPLE
         ON UPDATE NO ACTION
         ON DELETE NO ACTION
         NOT VALID
