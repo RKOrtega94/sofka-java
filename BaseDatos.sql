@@ -49,7 +49,7 @@ CREATE TABLE public.account
     id bigserial NOT NULL,
     "number" character varying(50) NOT NULL,
     type character varying(10) NOT NULL DEFAULT 'SAVINGS',
-    balance numeric(15, 6) NOT NULL DEFAULT 0,
+    initial_balance numeric(15, 6) NOT NULL DEFAULT 0,
     status boolean NOT NULL DEFAULT true,
     PRIMARY KEY (id)
 );
