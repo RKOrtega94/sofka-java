@@ -59,7 +59,7 @@ CREATE TABLE public.movements
     id bigserial NOT NULL,
     account_id bigint NOT NULL,
     date timestamp with time zone NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    type character(2) NOT NULL,
+    type character varying(10) NOT NULL,
     amount numeric(15, 6) NOT NULL,
     balance numeric(15, 6) NOT NULL DEFAULT 0,
     PRIMARY KEY (id),
