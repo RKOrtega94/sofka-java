@@ -7,6 +7,8 @@ CREATE DATABASE client_database
     CONNECTION LIMIT = -1
     IS_TEMPLATE = False;
 
+\connect client_database
+
 CREATE TABLE public.people
 (
     id bigserial NOT NULL,
@@ -44,14 +46,17 @@ CREATE DATABASE account_database
     CONNECTION LIMIT = -1
     IS_TEMPLATE = False;
 
+\connect account_database
+
 CREATE TABLE public.accounts
 (
     id bigserial NOT NULL,
-    "number" character varying(50) NOT NULL,
-    type character varying(10) NOT NULL DEFAULT 'SAVINGS',
-    balance numeric(15, 6) NOT NULL DEFAULT 0,
+    "number" character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    type character varying(10) COLLATE pg_catalog."default" NOT NULL DEFAULT 'SAVINGS'::character varying,
+    balance numeric(15,6) NOT NULL DEFAULT 0,
     status boolean NOT NULL DEFAULT true,
-    PRIMARY KEY (id)
+    client_id bigint NOT NULL DEFAULT 1,
+    CONSTRAINT accounts_pkey PRIMARY KEY (id)
 );
 
 CREATE TABLE public.movements

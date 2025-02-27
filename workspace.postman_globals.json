@@ -1,0 +1,33 @@
+{
+	"id": "f4166584-4b07-4020-891f-2d2d2d6a1c51",
+	"values": [
+		{
+			"key": "basepath",
+			"value": "localhost:8080",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "clients",
+			"value": "/api/clientes",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "accounts",
+			"value": "/api/cuentas",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "movements",
+			"value": "/api/movimientos",
+			"type": "default",
+			"enabled": true
+		}
+	],
+	"name": "Globals",
+	"_postman_variable_scope": "globals",
+	"_postman_exported_at": "2025-02-27T10:18:12.489Z",
+	"_postman_exported_using": "Postman/11.34.3"
+}

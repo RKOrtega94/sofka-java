@@ -1,0 +1,333 @@
+{
+	"info": {
+		"_postman_id": "a8621d2b-8f3a-4deb-a5f9-874e022241f3",
+		"name": "SOFKA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7819158"
+	},
+	"item": [
+		{
+			"name": "BANK ACCOUNT",
+			"item": [
+				{
+					"name": "RETRIEVE BANK ACCOUNTS",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{basepath}}{{accounts}}",
+							"host": [
+								"{{basepath}}{{accounts}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RETRIEVE ACCOUNT BY ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{basepath}}{{accounts}}/7",
+							"host": [
+								"{{basepath}}{{accounts}}"
+							],
+							"path": [
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE BANK ACCOUNT",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"initialBalance\": 10,\r\n    \"type\": \"SAVINGS\",\r\n    \"clientId\": 17\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{basepath}}{{accounts}}",
+							"host": [
+								"{{basepath}}{{accounts}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE BANK ACCOUNT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"SAVINGS\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{basepath}}{{accounts}}/2",
+							"host": [
+								"{{basepath}}{{accounts}}"
+							],
+							"path": [
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE ACCOUNT",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"SAVINGS\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{basepath}}{{accounts}}/7",
+							"host": [
+								"{{basepath}}{{accounts}}"
+							],
+							"path": [
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MOVEMENTS",
+			"item": [
+				{
+					"name": "CREATE MOVEMENT",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"accountNumber\": \"2026891151\",\r\n    \"amount\": -60\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{basepath}}{{movements}}",
+							"host": [
+								"{{basepath}}{{movements}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "REPORTS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{basepath}}{{movements}}/reportes?fechas=2025-02-01,2025-02-28",
+							"host": [
+								"{{basepath}}{{movements}}"
+							],
+							"path": [
+								"reportes"
+							],
+							"query": [
+								{
+									"key": "fechas",
+									"value": "2025-02-01,2025-02-28"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CLIENTS",
+			"item": [
+				{
+					"name": "RETRIEVE CLIENTS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{basepath}}{{clients}}?number=0&size=20&sort=id,asc",
+							"host": [
+								"{{basepath}}{{clients}}"
+							],
+							"query": [
+								{
+									"key": "number",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "20"
+								},
+								{
+									"key": "sort",
+									"value": "id,desc",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "id,asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RETRIEVE CLIENT BY ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{basepath}}{{clients}}/16",
+							"host": [
+								"{{basepath}}{{clients}}"
+							],
+							"path": [
+								"16"
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": "id,desc",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE CLIENT",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"clientId\": \"123456\",\r\n    \"password\": \"12345678\",\r\n    \"person\": {\r\n        \"address\": \"test\",\r\n        \"name\": \"test\",\r\n        \"phone\": \"0987654321\",\r\n        \"identification\": \"123456789\",\r\n        \"gender\": \"MALE\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{basepath}}{{clients}}",
+							"host": [
+								"{{basepath}}{{clients}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE CLIENT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"clientId\": \"123456\",\r\n    \"password\": \"12345678\",\r\n    \"status\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{basepath}}{{clients}}/16",
+							"host": [
+								"{{basepath}}{{clients}}"
+							],
+							"path": [
+								"16"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE CLIENT",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"clientId\": \"123456\",\r\n    \"password\": \"12345678\",\r\n    \"status\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{basepath}}{{clients}}/16",
+							"host": [
+								"{{basepath}}{{clients}}"
+							],
+							"path": [
+								"16"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
