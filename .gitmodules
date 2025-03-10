@@ -10,3 +10,7 @@
 	path = account
 	url = https://github.com/RKOrtega94/sofka_account_service.git
 	branch = main
+[submodule "security"]
+	path = security
+	url = https://github.com/RKOrtega94/sofka-security.git
+	branch = main
